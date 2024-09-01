@@ -23,9 +23,10 @@ class MyApp extends StatelessWidget {
         designSize: const Size(_designWidth, _designHeight),
         builder: (context, widget) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Findly',
+          title: 'Motobay',
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFFE6602)),
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xFFFE6602)),
             useMaterial3: true,
           ),
           home: const SplashScreen(),

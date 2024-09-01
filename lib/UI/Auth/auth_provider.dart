@@ -1,3 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AuthProvider extends ChangeNotifier {}
+class AuthProvider extends ChangeNotifier {
+  bool _isPasswordVisible = false;
+  bool get isPasswordVisible => _isPasswordVisible;
+  void togglePasswordVisibility() {
+    _isPasswordVisible = !_isPasswordVisible;
+    notifyListeners();
+  }
+}
