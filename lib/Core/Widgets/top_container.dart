@@ -6,12 +6,13 @@ import 'package:motorbay/Constant/colors.dart';
 class TopContainer extends StatelessWidget {
   const TopContainer({
     super.key,
+    this.height,
   });
-
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 245.h,
+      height: height ?? 245.h,
       width: double.infinity,
       decoration: BoxDecoration(
         color: primaryColor,

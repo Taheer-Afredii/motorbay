@@ -22,7 +22,7 @@ class HomeCategoryContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 61.h,
-        width: 123.57.w,
+        // width: 128.57.w,
         padding: EdgeInsets.only(top: 8.w, right: 8.w, left: 8.w, bottom: 8.h),
         decoration: BoxDecoration(
           color: whiteColor,

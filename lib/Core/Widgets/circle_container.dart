@@ -11,6 +11,7 @@ class CircleContainer extends StatelessWidget {
     this.color,
     this.padding,
     this.boxShadow,
+    this.onTap,
   });
 
   final double? height;
@@ -19,19 +20,23 @@ class CircleContainer extends StatelessWidget {
   final Color? color;
   final EdgeInsets? padding;
   final List<BoxShadow>? boxShadow;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height ?? 34.h,
-      width: width ?? 34.w,
-      padding: padding,
-      decoration: BoxDecoration(
-        boxShadow: boxShadow,
-        color: color ?? whiteColor.withOpacity(0.29),
-        shape: BoxShape.circle,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: height ?? 34.h,
+        width: width ?? 34.w,
+        padding: padding,
+        decoration: BoxDecoration(
+          boxShadow: boxShadow,
+          color: color ?? whiteColor.withOpacity(0.29),
+          shape: BoxShape.circle,
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }

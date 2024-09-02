@@ -26,6 +26,7 @@ class _AppBottomNavScreenState extends State<AppBottomNavScreen> {
   Widget build(BuildContext context) {
     return Consumer<BottomNavProvider>(builder: (context, model, child) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: _widgetOptions.elementAt(model.currentIndex),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(

@@ -42,8 +42,8 @@ class HomeScreen extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: homeCategoryList.length,
                         scrollDirection: Axis.horizontal,
-                        physics: const NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.only(left: 24.w),
+                        // physics: const NeverScrollableScrollPhysics(),
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: EdgeInsets.only(right: 7.43.w),
@@ -158,6 +158,7 @@ class HomeScreen extends StatelessWidget {
                         );
                       }).toList(),
                     ),
+                    SizedBox(height: 100.h),
                   ],
                 ),
               ),

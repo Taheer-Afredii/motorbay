@@ -1,6 +1,7 @@
 import 'package:motorbay/UI/Auth/auth_provider.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/home_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/SearchResult/search_result_viewmodel.dart';
+import 'package:motorbay/UI/Bottomsheet/Views/Profile/profile_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Saved/saved_screen_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/bottom_nav_provider.dart';
 import 'package:provider/provider.dart';
@@ -12,4 +13,5 @@ List<SingleChildWidget> providerList = [
   ChangeNotifierProvider(create: (_) => HomeViewmodel()),
   ChangeNotifierProvider(create: (_) => SearchResultViewmodel()),
   ChangeNotifierProvider(create: (_) => SavedScreenViewmodel()),
+  ChangeNotifierProvider(create: (_) => ProfileViewmodel()),
 ];

@@ -36,6 +36,7 @@ const String starIcon = '$iconpath/starIcon.png';
 const String whatsappIcon = '$iconpath/whatsappIcon.png';
 const String wheelIcon = '$iconpath/wheelIcon.png';
 const String backbuttonIcon = '$iconpath/backbutton.png';
+const String editIcon = '$iconpath/editIcom.png';
 
 const String googleIcon = '$iconpath/googleIcon.png';
 const String facebookIcon = '$iconpath/facebookIcon.png';
