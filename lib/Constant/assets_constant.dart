@@ -19,6 +19,8 @@ const String p6 = '$imagepath/p6.png';
 const String p7 = '$imagepath/p7.png';
 const String c1 = '$imagepath/c1.png';
 const String c2 = '$imagepath/c2.png';
+const String basic = '$imagepath/basic.png';
+const String professional = '$imagepath/professional.png';
 
 //*****************  Icons *************/
 
@@ -38,6 +40,8 @@ const String whatsappIcon = '$iconpath/whatsappIcon.png';
 const String wheelIcon = '$iconpath/wheelIcon.png';
 const String backbuttonIcon = '$iconpath/backbutton.png';
 const String editIcon = '$iconpath/editIcom.png';
+const String arrowdownIcon = '$iconpath/arrowdownIcon.png';
 
 const String googleIcon = '$iconpath/googleIcon.png';
 const String facebookIcon = '$iconpath/facebookIcon.png';
+const String checkIcon = '$iconpath/Vector.png';

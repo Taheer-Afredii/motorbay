@@ -10,8 +10,8 @@ import 'package:motorbay/UI/Bottomsheet/bottom_nav_provider.dart';
 import 'package:provider/provider.dart';
 
 class AppBottomNavScreen extends StatefulWidget {
-  const AppBottomNavScreen({super.key});
-
+  const AppBottomNavScreen({super.key, this.currentIndex});
+  final int? currentIndex;
   @override
   State<AppBottomNavScreen> createState() => _AppBottomNavScreenState();
 }

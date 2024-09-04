@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:motorbay/Constant/colors.dart';
 import 'package:motorbay/Constant/text_constant.dart';
 import 'package:motorbay/Core/Widgets/app_button.dart';
+import 'package:motorbay/UI/Auth/SignIn/sign_in_screen.dart';
 
 class DeleteAccountPopup extends StatelessWidget {
   DeleteAccountPopup({super.key});
@@ -44,7 +45,9 @@ class DeleteAccountPopup extends StatelessWidget {
                 Expanded(
                   child: AppButton(
                     text: "Delete",
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offAll(() => SignInScreen());
+                    },
                   ),
                 ),
               ],

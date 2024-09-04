@@ -13,21 +13,23 @@ class TopContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 245.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(22.r),
-          bottomRight: Radius.circular(22.r),
+        height: height ?? 245.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: primaryColor,
+          image: const DecorationImage(
+            alignment: Alignment.topRight,
+            image: AssetImage(containerImage),
+            scale: 4,
+          ),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(22.r),
+            bottomRight: Radius.circular(22.r),
+          ),
         ),
-      ),
-      child: Image.asset(
-        containerImage,
-        scale: 4,
-        alignment: Alignment.topRight,
-      ),
-    );
+        child: Padding(
+            padding: EdgeInsets.only(left: 24.w),
+            child: AppbarWidget(width: 95.w, text: "Profile")));
   }
 }
 
