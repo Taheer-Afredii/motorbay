@@ -20,6 +20,10 @@ class CustomTextField extends StatelessWidget {
     this.radius,
     this.prefixicon,
     this.validator,
+    this.showSuffixIcon,
+    this.suffixIcon,
+    this.suffixIconColor,
+    this.maxLines,
   });
 
   final String hintText;
@@ -34,6 +38,10 @@ class CustomTextField extends StatelessWidget {
   final double? radius;
   final String? prefixicon;
   final String? Function(String?)? validator;
+  final bool? showSuffixIcon;
+  final IconData? suffixIcon;
+  final Color? suffixIconColor;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +49,7 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       controller: controller,
       // textAlign: TextAlign.center,s
-      // maxLines: 10 ,
+      maxLines: maxLines,
       style: montserratTextStyle(
         color: hintColor ?? hintColor,
         fontSize: 14.sp,
@@ -58,7 +66,14 @@ class CustomTextField extends StatelessWidget {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintText: hintText,
         prefix: SizedBox(width: 3.w),
-        // suffixIcon: const SizedBox(),
+        suffixIcon: showSuffixIcon ?? false
+            ? Padding(
+                padding: EdgeInsets.only(right: 10.h),
+                child: Icon(
+                  suffixIcon ?? Icons.keyboard_arrow_down,
+                  color: suffixIconColor ?? blackColor,
+                ))
+            : null,
         fillColor: whiteColor,
         filled: true,
         // contentPadding: EdgeInsets.symmetric(vertical: 0.h, horizontal: 16.w),
@@ -73,13 +88,13 @@ class CustomTextField extends StatelessWidget {
           borderSide: const BorderSide(
             color: textfieldborderColor,
           ),
-          borderRadius: BorderRadius.circular(radius ?? 5.r),
+          borderRadius: BorderRadius.circular(radius ?? 5.51.r),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: textfieldborderColor,
           ),
-          borderRadius: BorderRadius.circular(radius ?? 5.r),
+          borderRadius: BorderRadius.circular(radius ?? 5.51.r),
         ),
       ),
     );

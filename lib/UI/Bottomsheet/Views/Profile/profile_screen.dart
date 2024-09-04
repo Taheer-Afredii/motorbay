@@ -54,8 +54,6 @@ class ProfileScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                          height: 100.h,
-                          // width: 342.w,
                           padding: EdgeInsets.symmetric(
                               horizontal: 20.w, vertical: 18.h),
                           decoration: BoxDecoration(

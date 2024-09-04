@@ -1,8 +1,15 @@
+import 'dart:io';
+
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:motorbay/Constant/colors.dart';
+import 'package:motorbay/Constant/text_constant.dart';
 
 class CustomLabelContainer extends StatelessWidget {
-  const CustomLabelContainer({super.key});
+  const CustomLabelContainer({super.key, this.image, this.onTap});
+  final String? image;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -10,36 +17,52 @@ class CustomLabelContainer extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          padding: EdgeInsets.only(top: 16.h, left: 16.w, right: 16.w),
+          height: 149.h,
+          padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 13.h),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(5.52.r),
           ),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "",
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: Colors.grey,
-              ),
+          child: GestureDetector(
+            onTap: onTap,
+            child: DottedBorder(
+              color: primaryColor,
+              dashPattern: const [4],
+              child: image != null
+                  ? Image.file(File(image!))
+                  : Container(
+                      color: primaryColor.withOpacity(0.05),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add_circle,
+                            color: primaryColor,
+                            size: 30.sp,
+                          ),
+                          SizedBox(height: 17.96.h),
+                          Align(
+                            alignment: Alignment.center,
+                            child: montserratText(
+                                text: "Add Cover Photo",
+                                fontSize: 11.91.sp,
+                                color: primaryColor,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
             ),
           ),
         ),
         Positioned(
           left: 16.w,
-          top: -10,
+          top: -8.h,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            color: const Color(0xFFF5F5F5),
-            child: Text(
-              "Enter your reason",
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: Colors.grey,
-              ),
-            ),
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 2.w),
+              color: whiteColor,
+              child: montserratText(text: "Add Cover Photo", fontSize: 10.sp)),
         ),
       ],
     );

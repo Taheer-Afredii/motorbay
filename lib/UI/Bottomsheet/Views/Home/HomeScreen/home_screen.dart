@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:motorbay/Constant/assets_constant.dart';
 import 'package:motorbay/Constant/text_constant.dart';
 import 'package:motorbay/Models/sponsored_model.dart';
@@ -9,6 +10,7 @@ import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/custom_dot
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/home_category_container.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/home_heading_widget.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/sponsored_listview.dart';
+import 'package:motorbay/UI/Bottomsheet/Views/OpenServiceScreen/open_service_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -48,7 +50,10 @@ class HomeScreen extends StatelessWidget {
                           return Padding(
                             padding: EdgeInsets.only(right: 7.43.w),
                             child: HomeCategoryContainer(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(() => const OpenServiceScreen());
+                                if (index == 0) {}
+                              },
                               icon: homeCategoryList[index].icon,
                               text: homeCategoryList[index].text,
                               text2: homeCategoryList[index].text2,
@@ -88,6 +93,9 @@ class HomeScreen extends StatelessWidget {
                                 model.toggleBookmark(index);
                               },
                               isBookmarked: sponsoredList[index].isBookmarked!,
+                              onTap: () {
+                                Get.to(() => const OpenServiceScreen());
+                              },
                             ),
                           );
                         },
@@ -124,6 +132,9 @@ class HomeScreen extends StatelessWidget {
                                 model.toggleRecentBookmark(index);
                               },
                               isBookmarked: recentList[index].isBookmarked!,
+                              onTap: () {
+                                Get.to(() => const OpenServiceScreen());
+                              },
                             ),
                           );
                         },

@@ -8,6 +8,7 @@ const String containerImage = '$imagepath/containerImage.png';
 const String logoText = '$imagepath/logotext.png';
 const String gearboxImaage = '$imagepath/gearboxImage.png';
 const String engineoilImage = '$imagepath/oilchangeImage.png';
+const String gearboxlarge = '$imagepath/gearboxlarge.png';
 const String wheelImage = '$imagepath/wheelalignmentImage.png';
 const String p1 = '$imagepath/p1.png';
 const String p2 = '$imagepath/p2.png';

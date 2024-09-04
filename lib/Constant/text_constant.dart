@@ -141,7 +141,7 @@ Text montserrat16Text(
     overflow: overflow ?? TextOverflow.ellipsis,
     style: GoogleFonts.montserrat(
       height: height,
-      color: color ?? textColor,
+      color: color ?? blackColor,
       fontSize: fontSize ?? 16.sp,
       fontWeight: fontWeight ?? FontWeight.w500,
       decoration: textDecoration ?? TextDecoration.none,
