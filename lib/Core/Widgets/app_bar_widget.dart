@@ -11,9 +11,11 @@ class AppbarWidget extends StatelessWidget {
     super.key,
     required this.width,
     required this.text,
+    this.onTap,
   });
   final double width;
   final String text;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,10 @@ class AppbarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () {
-            Get.back();
-          },
+          onTap: onTap ??
+              () {
+                Get.back();
+              },
           child: CircleContainer(
             padding:
                 EdgeInsets.only(left: 8.w, right: 9.w, top: 8.h, bottom: 9.h),

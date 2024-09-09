@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:motorbay/Constant/colors.dart';
 import 'package:motorbay/Constant/text_constant.dart';
 import 'package:motorbay/Core/Widgets/top_container.dart';
 import 'package:motorbay/Models/services_review_model.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/MyReviews/my_review_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/OpenServiceScreen/widgets/review_listview.dart';
-import 'package:motorbay/UI/Bottomsheet/Views/Packages/packages_screen.dart';
 import 'package:provider/provider.dart';
 
 class MyReviewScreen extends StatelessWidget {
@@ -90,7 +88,7 @@ class MyReviewScreen extends StatelessWidget {
                       time: data.time!,
                       rating: data.rating!,
                       onTap: () {
-                        Get.to(() => const PackagesScreen());
+                        // Get.to(() => const PackagesScreen());
                       },
                       isExpanded: data.isExpanded,
                       onSeeMoreSeeLessTap: () {

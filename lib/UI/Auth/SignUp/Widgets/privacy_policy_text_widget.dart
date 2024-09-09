@@ -21,7 +21,7 @@ class PrivacyPolicyTextWidget extends StatelessWidget {
       ),
       children: [
         TextSpan(
-            text: "Prvicy Policy",
+            text: "Privacy Policy",
             style: montserratTextStyle(
               color: primaryColor,
               fontSize: 12.sp,

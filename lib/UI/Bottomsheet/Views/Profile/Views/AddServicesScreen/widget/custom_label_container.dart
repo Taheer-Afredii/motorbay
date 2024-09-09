@@ -26,10 +26,23 @@ class CustomLabelContainer extends StatelessWidget {
           child: GestureDetector(
             onTap: onTap,
             child: DottedBorder(
+              padding:
+                  EdgeInsets.only(top: 2.h, left: 2.w, right: 2.w, bottom: 0),
               color: primaryColor,
               dashPattern: const [4],
               child: image != null
-                  ? Image.file(File(image!))
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(5.52.r),
+                      child: Image.file(
+                        File(
+                          image!,
+                        ),
+                        height: 116.h,
+                        width: 276.w,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
+                      ),
+                    )
                   : Container(
                       color: primaryColor.withOpacity(0.05),
                       child: Column(

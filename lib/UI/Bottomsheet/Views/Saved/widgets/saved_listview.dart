@@ -116,7 +116,7 @@ class SavedScreeListview extends StatelessWidget {
                       height: 28.01.h,
                       width: 28.01.w,
                       color: whiteColor,
-                      padding: EdgeInsets.all(6.5.w),
+                      // padding: EdgeInsets.all(6.5.w),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.2),
@@ -125,12 +125,14 @@ class SavedScreeListview extends StatelessWidget {
                           offset: const Offset(0, 3),
                         ),
                       ],
-                      child: Icon(
-                          isBookmarked
-                              ? Icons.favorite
-                              : Icons.favorite_outline,
-                          color: const Color(0xFFFF1717),
-                          size: 16.sp),
+                      child: Center(
+                        child: Icon(
+                            isBookmarked
+                                ? Icons.favorite
+                                : Icons.favorite_outline,
+                            color: const Color(0xFFFF1717),
+                            size: 16.sp),
+                      ),
                     ),
                   ),
                 ),

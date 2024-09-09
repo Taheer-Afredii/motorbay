@@ -19,8 +19,8 @@ class OpenServicesImageWidget extends StatelessWidget {
       height: 227.h,
       padding: EdgeInsets.symmetric(horizontal: 25.w),
       decoration: const BoxDecoration(
-        image:
-            DecorationImage(image: AssetImage(gearboxlarge), fit: BoxFit.cover),
+        image: DecorationImage(
+            image: AssetImage(gearboxImaage), fit: BoxFit.cover),
       ),
       child: Padding(
         padding: EdgeInsets.only(top: 64.h),

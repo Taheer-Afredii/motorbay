@@ -29,7 +29,7 @@ class OpenserviceDecriptionWidget extends StatelessWidget {
           top: -10.h,
           child: Container(
               padding: EdgeInsets.symmetric(horizontal: 2.w),
-              color: whiteColor,
+              color: const Color(0xFFF8F8F8),
               child: montserratText(
                   text: "Description",
                   fontSize: 12.85.sp,

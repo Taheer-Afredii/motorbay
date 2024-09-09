@@ -8,11 +8,11 @@ class HomeSearchLocationDropdown extends StatelessWidget {
   const HomeSearchLocationDropdown({
     super.key,
     required this.hinttext,
-    this.value,
+    // this.value,
     required this.onChanged,
   });
   final String hinttext;
-  final String? value;
+  // final String? value;
   final Function(String?) onChanged;
 
   @override
@@ -20,8 +20,12 @@ class HomeSearchLocationDropdown extends StatelessWidget {
     return SizedBox(
       width: 160.w,
       child: DropdownButtonFormField<String>(
+        dropdownColor: whiteColor,
         style: montserratTextStyle(
-            color: textColor, fontSize: 14.sp, fontWeight: FontWeight.normal),
+          fontSize: 14.sp,
+          fontWeight: FontWeight.normal,
+          color: blackColor,
+        ),
         decoration: InputDecoration(
             prefixIcon: Padding(
                 padding: EdgeInsets.only(right: 5.w),
@@ -48,8 +52,8 @@ class HomeSearchLocationDropdown extends StatelessWidget {
         isDense: true,
         items: <String>[
           'Hatfield Pretoria',
-          'Hatfield Pretoria',
-          'Hatfield Pretoria'
+          'Johnseburg',
+          'Cape Town',
         ].map((String value) {
           return DropdownMenuItem<String>(
             value: value,
@@ -57,7 +61,7 @@ class HomeSearchLocationDropdown extends StatelessWidget {
                 text: value,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.normal,
-                color: hintTextColor),
+                color: blackColor),
           );
         }).toList(),
         onChanged: (String? newValue) {

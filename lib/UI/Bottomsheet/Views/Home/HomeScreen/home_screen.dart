@@ -10,6 +10,7 @@ import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/custom_dot
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/home_category_container.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/home_heading_widget.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/HomeScreen/widgets/sponsored_listview.dart';
+import 'package:motorbay/UI/Bottomsheet/Views/Home/SearchResult/seaarch_result_screen.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/OpenServiceScreen/open_service_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    double height = size.height;
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -51,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                             padding: EdgeInsets.only(right: 7.43.w),
                             child: HomeCategoryContainer(
                               onTap: () {
-                                Get.to(() => const OpenServiceScreen());
+                                Get.to(() => const SeaarchResultScreen());
                                 if (index == 0) {}
                               },
                               icon: homeCategoryList[index].icon,
@@ -76,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 18.h),
                     SizedBox(
-                      height: 185.h,
+                      height: height * 0.24,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: sponsoredList.length,
@@ -89,6 +92,7 @@ class HomeScreen extends StatelessWidget {
                               image: sponsoredList[index].image!,
                               location: sponsoredList[index].location!,
                               price: sponsoredList[index].price!,
+                              title: sponsoredList[index].title!,
                               onBookMarkTap: () {
                                 model.toggleBookmark(index);
                               },
@@ -115,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 18.h),
                     SizedBox(
-                      height: 190.h,
+                      height: height * 0.24,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: recentList.length,
@@ -128,6 +132,7 @@ class HomeScreen extends StatelessWidget {
                               image: recentList[index].image!,
                               location: recentList[index].location!,
                               price: recentList[index].price!,
+                              title: sponsoredList[index].title!,
                               onBookMarkTap: () {
                                 model.toggleRecentBookmark(index);
                               },

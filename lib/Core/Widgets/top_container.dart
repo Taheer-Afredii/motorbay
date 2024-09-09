@@ -4,12 +4,43 @@ import 'package:motorbay/Constant/assets_constant.dart';
 import 'package:motorbay/Constant/colors.dart';
 import 'package:motorbay/Core/Widgets/app_bar_widget.dart';
 
+class SignInTopContainer extends StatelessWidget {
+  const SignInTopContainer({
+    super.key,
+    this.height,
+    this.onTap,
+  });
+  final double? height;
+  final VoidCallback? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height ?? 245.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: primaryColor,
+        image: const DecorationImage(
+          alignment: Alignment.topRight,
+          image: AssetImage(containerImage),
+          scale: 4,
+        ),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(22.r),
+          bottomRight: Radius.circular(22.r),
+        ),
+      ),
+    );
+  }
+}
+
 class TopContainer extends StatelessWidget {
   const TopContainer({
     super.key,
     this.height,
+    this.onTap,
   });
   final double? height;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +60,7 @@ class TopContainer extends StatelessWidget {
         ),
         child: Padding(
             padding: EdgeInsets.only(left: 24.w),
-            child: AppbarWidget(width: 95.w, text: "Profile")));
+            child: AppbarWidget(onTap: onTap, width: 95.w, text: "Profile")));
   }
 }
 

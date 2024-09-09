@@ -30,7 +30,7 @@ class SignInScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.topCenter,
               children: [
-                const TopContainer(),
+                const SignInTopContainer(),
                 Padding(
                   padding: EdgeInsets.only(top: 53.h),
                   child: Image.asset(

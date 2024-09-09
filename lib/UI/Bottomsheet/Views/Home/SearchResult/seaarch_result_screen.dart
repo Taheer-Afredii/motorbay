@@ -1,6 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:motorbay/Constant/colors.dart';
+import 'package:get/get.dart';
 import 'package:motorbay/Constant/text_constant.dart';
 import 'package:motorbay/Core/Widgets/app_bar_widget.dart';
 import 'package:motorbay/Core/Widgets/home_search_location_dropdown.dart';
@@ -9,6 +11,7 @@ import 'package:motorbay/Models/search_result_model.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/SearchResult/search_result_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/SearchResult/widget/home_search_textfield.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Home/SearchResult/widget/search_result_listview.dart';
+import 'package:motorbay/UI/Bottomsheet/Views/OpenServiceScreen/open_service_screen.dart';
 import 'package:provider/provider.dart';
 
 class SeaarchResultScreen extends StatelessWidget {
@@ -18,7 +21,7 @@ class SeaarchResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SearchResultViewmodel>(builder: (context, model, child) {
       return Scaffold(
-          backgroundColor: whiteColor,
+          backgroundColor: const Color(0xFFF8F8F8),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -51,7 +54,7 @@ class SeaarchResultScreen extends StatelessWidget {
               SizedBox(height: 15.h),
               Padding(
                 padding: EdgeInsets.only(left: 24.w),
-                child: montserrat18Text(text: "Result"),
+                child: montserrat18Text(text: "Results"),
               ),
               SizedBox(height: 15.h),
               Flexible(
@@ -65,6 +68,10 @@ class SeaarchResultScreen extends StatelessWidget {
                       return Padding(
                         padding: EdgeInsets.only(bottom: 15.h),
                         child: SearchResultListView(
+                          onTap: () {
+                            log("Tapped");
+                            Get.to(() => const OpenServiceScreen());
+                          },
                           image: data.image!,
                           location: data.location!,
                           price: data.price!,

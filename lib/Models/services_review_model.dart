@@ -20,14 +20,16 @@ class ServicesReviewModel {
 List<ServicesReviewModel> servicesReviewList = [
   ServicesReviewModel(
       name: "Jhon Smith",
-      review: "Excellent Photographer and very professional in his work",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p1,
       // isExpanded: false,
       rating: "4.9"),
   ServicesReviewModel(
       name: "Adciar",
-      review: "This Photographer arrived late This Photographer arrived late.",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p2,
       // isExpanded: false,
@@ -35,7 +37,7 @@ List<ServicesReviewModel> servicesReviewList = [
   ServicesReviewModel(
       name: "Chris",
       review:
-          "Excellent Work in fixing Excellent Work in fixing Excellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p3,
       // isExpanded: false,
@@ -43,21 +45,23 @@ List<ServicesReviewModel> servicesReviewList = [
   ServicesReviewModel(
       name: "Athalia Putri",
       review:
-          "Excellent Work in fixing Excellent Work in fixing Excellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p4,
       // isExpanded: false,
       rating: "4.9"),
   ServicesReviewModel(
       name: "John Doe",
-      review: "Excellent",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "4 months",
       // isExpanded: false,
       profile: p5,
       rating: "4.9"),
   ServicesReviewModel(
       name: "Jhon Smith",
-      review: "Excellent work. Thanks",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       // isExpanded: false,
       profile: p6,
@@ -65,39 +69,7 @@ List<ServicesReviewModel> servicesReviewList = [
   ServicesReviewModel(
       name: "Chris Hampton",
       review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
-      time: "2 weeks",
-      profile: p7,
-      // isExpanded: false,
-      rating: "4.9"),
-  ServicesReviewModel(
-      name: "Chris Hampton",
-      review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
-      time: "2 weeks",
-      profile: p7,
-      // isExpanded: false,
-      rating: "4.9"),
-  ServicesReviewModel(
-      name: "Chris Hampton",
-      review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
-      time: "2 weeks",
-      profile: p7,
-      // isExpanded: false,
-      rating: "4.9"),
-  ServicesReviewModel(
-      name: "Chris Hampton",
-      review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
-      time: "2 weeks",
-      profile: p7,
-      // isExpanded: false,
-      rating: "4.9"),
-  ServicesReviewModel(
-      name: "Chris Hampton",
-      review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p7,
       // isExpanded: false,
@@ -107,14 +79,16 @@ List<ServicesReviewModel> servicesReviewList = [
 List<ServicesReviewModel> myReviewsList = [
   ServicesReviewModel(
       name: "Jhon Smith",
-      review: "Excellent Photographer and very professional in his work",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p1,
       // isExpanded: false,
       rating: "4.9"),
   ServicesReviewModel(
       name: "Adciar",
-      review: "This Photographer arrived late This Photographer arrived late.",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p2,
       // isExpanded: false,
@@ -122,7 +96,7 @@ List<ServicesReviewModel> myReviewsList = [
   ServicesReviewModel(
       name: "Chris",
       review:
-          "Excellent Work in fixing Excellent Work in fixing Excellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p3,
       // isExpanded: false,
@@ -130,21 +104,23 @@ List<ServicesReviewModel> myReviewsList = [
   ServicesReviewModel(
       name: "Athalia Putri",
       review:
-          "Excellent Work in fixing Excellent Work in fixing Excellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p4,
       // isExpanded: false,
       rating: "4.9"),
   ServicesReviewModel(
       name: "John Doe",
-      review: "Excellent",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "4 months",
       // isExpanded: false,
       profile: p5,
       rating: "4.9"),
   ServicesReviewModel(
       name: "Jhon Smith",
-      review: "Excellent work. Thanks",
+      review:
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       // isExpanded: false,
       profile: p6,
@@ -152,7 +128,7 @@ List<ServicesReviewModel> myReviewsList = [
   ServicesReviewModel(
       name: "Chris Hampton",
       review:
-          "Excellent Work in fixing Excellent Work in fixingExcellent Work in fixing",
+          "This workshop was able to fix my gearbox for an affordable price, I highly recommend them",
       time: "2 weeks",
       profile: p7,
       // isExpanded: false,

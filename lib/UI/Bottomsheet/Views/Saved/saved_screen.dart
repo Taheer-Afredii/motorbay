@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:motorbay/Constant/colors.dart';
 import 'package:motorbay/Core/Widgets/app_bar_widget.dart';
 import 'package:motorbay/Core/Widgets/top_container.dart';
 import 'package:motorbay/Models/saved_model.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Saved/saved_screen_viewmodel.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Saved/widgets/saved_listview.dart';
+import 'package:motorbay/UI/Bottomsheet/bottom_nav_provider.dart';
 import 'package:provider/provider.dart';
 
 class SavedScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class SavedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SavedScreenViewmodel>(builder: (context, model, child) {
       return Scaffold(
-          backgroundColor: whiteColor,
+          backgroundColor: const Color(0xFFF8F8F8),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -27,7 +27,12 @@ class SavedScreen extends StatelessWidget {
                   const TopContainer2(),
                   Padding(
                       padding: EdgeInsets.only(left: 24.h, top: 66.h),
-                      child: AppbarWidget(width: 94.w, text: "Saved")),
+                      child: AppbarWidget(
+                          onTap: () {
+                            context.read<BottomNavProvider>().onItemTapped(0);
+                          },
+                          width: 94.w,
+                          text: "Saved")),
                 ],
               ),
               SizedBox(height: 30.h),

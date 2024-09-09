@@ -58,7 +58,7 @@ class OpenServiceScreen extends StatelessWidget {
                           SizedBox(height: 10.h),
                           montserratText14(
                               text: "From: R 2000",
-                              color: textColor,
+                              color: textColor.withOpacity(0.5),
                               fontWeight: FontWeight.w400),
                           SizedBox(height: 10.h),
                           Row(
@@ -67,8 +67,8 @@ class OpenServiceScreen extends StatelessWidget {
                                   width: 10.27.w, height: 14.h),
                               SizedBox(width: 5.w),
                               montserratText14(
-                                  text: "From: R 2000",
-                                  color: textColor,
+                                  text: "Hatfield Pretoria",
+                                  color: textColor.withOpacity(0.5),
                                   fontWeight: FontWeight.w400),
                             ],
                           ),
@@ -151,4 +151,4 @@ class OpenServiceScreen extends StatelessWidget {
 }
 
 String decscriptiontext =
-    "We Speccalice in gear box repairs, and installations. Our work had warranty We Speccalice in gear box repairs, and installations. Our work had warranty We Speccalice in gear box repairs, and installations. Our work had warrantyWe Speccalice in gear box repairs, and installations. Our work had warranty";
+    "We specialize in the repair and reconditioning of all gearboxes. We have over 10 years experience in gearbox repair services. We also sell and source gearboxes";

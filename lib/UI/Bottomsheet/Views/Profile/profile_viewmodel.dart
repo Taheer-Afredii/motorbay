@@ -48,4 +48,10 @@ class ProfileViewmodel extends ChangeNotifier {
     showSecurityDetails = !showSecurityDetails;
     notifyListeners();
   }
+
+  bool showContactUs = false;
+  void toggleContactUs() {
+    showContactUs = !showContactUs;
+    notifyListeners();
+  }
 }

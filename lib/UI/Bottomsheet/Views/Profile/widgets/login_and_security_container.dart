@@ -8,10 +8,12 @@ class LoginAndSecurityContainer extends StatelessWidget {
     super.key,
     this.onTap,
     this.icon,
+    this.text,
   });
 
   final VoidCallback? onTap;
   final IconData? icon;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class LoginAndSecurityContainer extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.only(left: 20.w),
                   child: montserratText12(
-                      text: "Login & Security", fontWeight: FontWeight.w600)),
+                      text: text ?? "", fontWeight: FontWeight.w600)),
               Padding(
                 padding: EdgeInsets.only(right: 20.w),
                 child: Icon(

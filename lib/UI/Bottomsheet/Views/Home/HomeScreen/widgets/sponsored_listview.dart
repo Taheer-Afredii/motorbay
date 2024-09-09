@@ -15,6 +15,7 @@ class SponsoredListview extends StatelessWidget {
     required this.onBookMarkTap,
     required this.isBookmarked,
     required this.onTap,
+    this.title,
   });
   final String image;
   final String location;
@@ -22,155 +23,120 @@ class SponsoredListview extends StatelessWidget {
   final VoidCallback onBookMarkTap;
   final bool isBookmarked;
   final VoidCallback onTap;
+  final String? title;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 16.w),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: 185.h,
-          width: 144.w,
-          // padding: EdgeInsets.only(top: 0.h, left: 11.w, right: 11.w),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                spreadRadius: 0,
-                blurRadius: 10,
-                offset: const Offset(0, 3),
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 185.h,
-                    width: 144.w,
-                    decoration: BoxDecoration(
-                        color: whiteColor,
-                        borderRadius: BorderRadius.circular(9.38.r),
-                        border: const Border(
-                          right: BorderSide(
-                            color: Color(0xFFE9E9E9),
-                          ),
-                          left: BorderSide(
-                            color: Color(0xFFE9E9E9),
-                          ),
-                          bottom: BorderSide(
-                            color: Color(0xFFE9E9E9),
-                          ),
-                        )),
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 8.91.w, bottom: 7.84.h),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              montserratText(
-                                  text: "Oil Change", fontSize: 11.6.sp),
-                              SizedBox(height: 2.h),
-                              SizedBox(
-                                width: 85.w,
-                                child: RichText(
-                                    text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: "From ",
-                                      style: GoogleFonts.montserrat(
-                                        color: blackColor,
-                                        fontSize: 9.67.sp,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    TextSpan(
-                                      text: price,
-                                      style: TextStyle(
-                                        color: blackColor,
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                )),
-                              ),
-                              SizedBox(height: 2.5.h),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    locationIcon,
-                                    height: 9.09.h,
-                                    width: 6.66.w,
-                                  ),
-                                  SizedBox(width: 4.w),
-                                  montserratText(
-                                    text: location,
-                                    fontSize: 9.09.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 8.w, bottom: 15.h),
-                            child: GestureDetector(
-                              onTap: onBookMarkTap,
-                              child: CircleContainer(
-                                height: 28.01.h,
-                                width: 28.01.w,
-                                color: whiteColor,
-                                padding: EdgeInsets.all(6.5.w),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
-                                    spreadRadius: 0,
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 3),
-                                  ),
-                                ],
-                                child: Icon(
-                                    isBookmarked
-                                        ? Icons.favorite
-                                        : Icons.favorite_outline,
-                                    color: const Color(0xFFFF1717),
-                                    size: 16.sp),
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 0.7,
+        color: whiteColor,
+        child: Stack(
+          alignment: Alignment.bottomRight,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(9.38.r),
+                      topRight: Radius.circular(9.38.r)),
+                  child: Stack(
+                    alignment: Alignment.topRight,
+                    children: [
+                      Image.asset(
+                        image,
+                        height: 115.h,
+                        fit: BoxFit.cover,
+                        width: 143.w,
+
+                        // width: 135.w,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 8.68.h),
+                Padding(
+                  padding: EdgeInsets.only(left: 8.91.w, bottom: 7.84.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      montserratText(
+                          text: title ?? "",
+                          fontSize: 11.6.sp,
+                          color: blackColor.withOpacity(0.9)),
+                      SizedBox(height: 2.h),
+                      SizedBox(
+                        width: 85.w,
+                        child: RichText(
+                            text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "From ",
+                              style: GoogleFonts.montserrat(
+                                color: blackColor.withOpacity(0.9),
+                                fontSize: 9.67.sp,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
+                            TextSpan(
+                              text: price,
+                              style: TextStyle(
+                                color: blackColor,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        )),
+                      ),
+                      SizedBox(height: 5.h),
+                      Row(
+                        children: [
+                          Image.asset(
+                            locationIcon,
+                            height: 9.09.h,
+                            width: 6.66.w,
+                          ),
+                          SizedBox(width: 4.w),
+                          montserratText(
+                            text: location,
+                            fontSize: 9.09.sp,
+                            fontWeight: FontWeight.w400,
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(9.38.r),
-                    child: Stack(
-                      alignment: Alignment.topRight,
-                      children: [
-                        Image.asset(
-                          image,
-                          height: 115.h,
-                          fit: BoxFit.cover,
-                          width: 143.w,
-
-                          // width: 135.w,
-                        ),
-                      ],
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 12.w, bottom: 15.h),
+              child: GestureDetector(
+                onTap: onBookMarkTap,
+                child: CircleContainer(
+                  height: 30.01.h,
+                  width: 30.01.w,
+                  color: whiteColor,
+                  padding: EdgeInsets.all(6.5.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
                     ),
-                  ),
-                ],
+                  ],
+                  child: Icon(
+                      isBookmarked ? Icons.favorite : Icons.favorite_outline,
+                      color: const Color(0xFFFF1717),
+                      size: 16.sp),
+                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

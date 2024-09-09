@@ -6,7 +6,6 @@ import 'package:motorbay/Constant/colors.dart';
 import 'package:motorbay/Constant/text_constant.dart';
 import 'package:motorbay/Core/Widgets/app_button.dart';
 import 'package:motorbay/Core/Widgets/app_textfield.dart';
-import 'package:motorbay/UI/Bottomsheet/Views/MyReviews/my_review_screen.dart';
 
 class AddReviewPop extends StatelessWidget {
   AddReviewPop({
@@ -99,7 +98,7 @@ class AddReviewPop extends StatelessWidget {
                             height: 54.h,
                             fontColor: whiteColor,
                             onPressed: () {
-                              Get.to(() => const MyReviewScreen());
+                              Get.back();
                             },
                             text: "Post"))
                   ],

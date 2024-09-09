@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:motorbay/Constant/assets_constant.dart';
 import 'package:motorbay/Constant/colors.dart';
+import 'package:motorbay/Core/Widgets/app_button.dart';
 import 'package:motorbay/Core/Widgets/top_container.dart';
+import 'package:motorbay/UI/Auth/SignIn/sign_in_screen.dart';
+import 'package:motorbay/UI/Bottomsheet/Views/MyReviews/my_review_screen.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/Views/MyServicesScreen/my_services_screen.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/Views/PrivacyPolicy/privacy_policy_screen.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/Views/TermsofUse/term_of_use_screen.dart';
@@ -12,6 +15,7 @@ import 'package:motorbay/UI/Bottomsheet/Views/Profile/widgets/delete_account_pop
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/widgets/edit_username_email_row.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/widgets/login_and_security_container.dart';
 import 'package:motorbay/UI/Bottomsheet/Views/Profile/widgets/profile_add_service_button.dart';
+import 'package:motorbay/UI/Bottomsheet/bottom_nav_provider.dart';
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -30,7 +34,12 @@ class ProfileScreen extends StatelessWidget {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  TopContainer(height: 183.h),
+                  TopContainer(
+                    height: 183.h,
+                    onTap: () {
+                      context.read<BottomNavProvider>().onItemTapped(0);
+                    },
+                  ),
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -83,6 +92,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 17.h),
                             LoginAndSecurityContainer(
+                              text: "Login & Security",
                               onTap: () {
                                 model.toggleSecurityDetails();
                               },
@@ -97,6 +107,11 @@ class ProfileScreen extends StatelessWidget {
                                 ? SecurityDetailWidget(model: model)
                                 : const SizedBox.shrink(),
                             SizedBox(height: 16.h),
+                            AppButton(
+                              text: "Save Changes",
+                              onPressed: () {},
+                            ),
+                            SizedBox(height: 16.h),
                             ProfileScreenContainer(
                               onTap: () {
                                 Get.to(() => const MyServicesScreen());
@@ -105,7 +120,16 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 10.21.h),
                             ProfileScreenContainer(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(() => const MyReviewScreen());
+                              },
+                              text: "My Reviews",
+                            ),
+                            SizedBox(height: 10.21.h),
+                            ProfileScreenContainer(
+                              onTap: () {
+                                Get.offAll(() => SignInScreen());
+                              },
                               text: "Logout",
                             ),
                             SizedBox(height: 10.21.h),
@@ -130,10 +154,31 @@ class ProfileScreen extends StatelessWidget {
                               text: "Delete Account",
                             ),
                             SizedBox(height: 10.21.h),
-                            ProfileScreenContainer(
-                              onTap: () {},
+                            LoginAndSecurityContainer(
                               text: "Contact Us",
+                              onTap: () {
+                                model.toggleContactUs();
+                              },
+                              icon: !model.showContactUs
+                                  ? Icons.keyboard_arrow_down_outlined
+                                  : Icons.keyboard_arrow_up,
                             ),
+                            !model.showContactUs
+                                ? SizedBox(height: 12.86.h)
+                                : const SizedBox.shrink(),
+                            !model.showContactUs
+                                ? Container(
+                                    height: 100.h,
+                                    width: 1.sw,
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w, vertical: 18.h),
+                                    decoration: BoxDecoration(
+                                      color: whiteColor,
+                                      borderRadius:
+                                          BorderRadius.circular(7.64.r),
+                                    ),
+                                  )
+                                : const SizedBox.shrink(),
                             SizedBox(height: 10.21.h),
                             SizedBox(height: 100.h),
                           ],
