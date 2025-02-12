@@ -22,3 +22,4 @@ const Color ashGreyColor = Color(0xFFEEEEEE);
 const Color redColor = Color(0xFFFB1717);
 const Color yelloColor = Color(0xFFFFBF00);
 const Color greenColor = Color(0xFF05FF00);
+const Color darkgreen = Color(0xFF0F1828);

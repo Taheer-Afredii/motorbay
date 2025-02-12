@@ -1,6 +1,6 @@
 # motorbay
 
-A new Flutter project.
+A Flutter Only UI App.
 
 ## Getting Started
 
